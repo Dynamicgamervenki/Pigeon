@@ -46,17 +46,44 @@ public class CameraManager : MonoBehaviour
         transform.position = taregtPos;
     }
 
+    //private void RotateCamera()
+    //{
+    //    lookAngle = lookAngle + (inputManager.cameraInputX * cameraLookSpeed);
+    //    pivotAngle = pivotAngle - (inputManager.cameraInputY * cameraPivotSpeed);
+    //    pivotAngle = Mathf.Clamp(pivotAngle,minPivotAngle,maxPivotAngle);
+
+    //    Vector3 rotation = Vector3.zero;
+    //    rotation.y = lookAngle;
+    //    Quaternion targetRotation = Quaternion.Euler(rotation);
+    //    transform.rotation = targetRotation;
+
+    //    rotation = Vector3.zero;
+    //    rotation.x = pivotAngle;
+    //    targetRotation = Quaternion.Euler(rotation);
+    //    cameraPivot.localRotation = targetRotation;
+    //}
+
+    private float minLookAngle = -90f;
+    private float maxLookAngle = 90f;
+
     private void RotateCamera()
     {
         lookAngle = lookAngle + (inputManager.cameraInputX * cameraLookSpeed);
         pivotAngle = pivotAngle - (inputManager.cameraInputY * cameraPivotSpeed);
-        pivotAngle = Mathf.Clamp(pivotAngle,minPivotAngle,maxPivotAngle);
 
+        // Clamp the look angle to restrict horizontal rotation to 180 degrees
+        lookAngle = Mathf.Clamp(lookAngle, minLookAngle, maxLookAngle);
+
+        // Clamp the pivot angle to its defined min and max
+        pivotAngle = Mathf.Clamp(pivotAngle, minPivotAngle, maxPivotAngle);
+
+        // Apply the clamped look angle to the camera rotation
         Vector3 rotation = Vector3.zero;
         rotation.y = lookAngle;
         Quaternion targetRotation = Quaternion.Euler(rotation);
         transform.rotation = targetRotation;
 
+        // Apply the clamped pivot angle to the camera pivot rotation
         rotation = Vector3.zero;
         rotation.x = pivotAngle;
         targetRotation = Quaternion.Euler(rotation);

@@ -100,15 +100,15 @@ public class PlayerLocomotion : MonoBehaviour
         Vector3 targetDirection = Vector3.zero;
 
         // Calculate the target direction based on input
-        targetDirection = camera.forward * inputManager.verticalInput + camera.right * inputManager.horizontalInput;
+        targetDirection = camera.right * inputManager.horizontalInput;
         targetDirection.Normalize();
         targetDirection.y = 0; // Keep the target direction on the horizontal plane
 
         // If there's no input, maintain the current forward direction
-        //if (targetDirection == Vector3.zero)
-        //{
-        //    targetDirection = transform.forward;
-        //}
+        if (targetDirection == Vector3.zero)
+        {
+            targetDirection = transform.forward;
+        }
 
         // Calculate the target rotation based on the target direction
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
@@ -150,7 +150,7 @@ public class PlayerLocomotion : MonoBehaviour
     public void HandlePoop()
     {
         var poop = Instantiate(Poop,PoopLaunchPoint.position,Poop.transform.rotation);
-        poop.GetComponent<Rigidbody>().velocity = PoopLaunchSpeed * -PoopLaunchPoint.up;
+       poop.GetComponent<Rigidbody>().velocity = PoopLaunchSpeed * -PoopLaunchPoint.up;
         //poop.GetComponent<Rigidbody>().AddForce(Vector3.down * PoopLaunchSpeed, ForceMode.Impulse);
     }
 
