@@ -115,7 +115,7 @@ public class CameraManager : MonoBehaviour
     public void HandleAllCameraMovemnts()
     {
       //  FollowTarget();
-        RotateCamera();
+        //RotateCamera();
         //HandleCameraCollisions();
     }
 }
