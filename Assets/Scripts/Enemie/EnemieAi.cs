@@ -21,10 +21,14 @@ public class EnemieAi : MonoBehaviour
 
     public float rotationSpeed;
 
+    public GameObject rightHand;
+    private GameObject Ak47;
+
     private void Awake()
     {
         pigeon = GameObject.Find("Player");
         anim = GetComponent<Animator>();
+        Ak47 = this.gameObject.transform.GetChild(9).gameObject;
     }
 
     private void Update()
@@ -54,6 +58,7 @@ public class EnemieAi : MonoBehaviour
     private void ShootPigeon()
     {
         anim.SetBool("isShooting", true);
+        AttachGun();
         GameObject instantiatedBullet =  Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
         Vector3 directionToPlayer = (pigeon.transform.position - shootPoint.position).normalized;
         Rigidbody bulletRigidbody = instantiatedBullet.GetComponent<Rigidbody>();
@@ -63,6 +68,18 @@ public class EnemieAi : MonoBehaviour
         }
 
     }
+
+    public void AttachGun()
+    {
+        Ak47.gameObject.SetActive(true);
+        Ak47.gameObject.transform.SetParent(rightHand.transform, true);
+        Ak47.gameObject.transform.localPosition = new Vector3(-0.0286826193f, 0.201789796f, 0.0566200167f);
+        Ak47.gameObject.transform.localRotation = Quaternion.Euler(334.487518f, 197.074829f, 266.034729f);
+    }
+
+
+
+
 
 
 

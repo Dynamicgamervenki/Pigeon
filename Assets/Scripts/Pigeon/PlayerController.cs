@@ -37,6 +37,11 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = (transform.forward * moveForward + transform.right * moveHorizontal) * moveSpeed * Time.deltaTime;
         characterController.Move(moveDirection);
 
+
+        // Calculate the speed based on both forward and horizontal movement for animation blendtree
+        float speed = new Vector3(moveForward, 0, moveHorizontal).magnitude;
+        animator.SetFloat("Speed", speed);
+
         // Smoothly tilt the bird to the left when Q key is pressed
         if (Input.GetKey(KeyCode.Q))
         {
@@ -59,17 +64,15 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             characterController.Move(Vector3.up * verticalSpeed * Time.deltaTime);
+            animator.SetFloat("Speed", 1.0f);
         }
 
         // Move the pigeon down when S key is pressed
         if (Input.GetKey(KeyCode.S))
         {
             characterController.Move(Vector3.down * verticalSpeed * Time.deltaTime);
+            animator.SetFloat("Speed", 1.0f);
         }
-
-        // Calculate the speed based on both forward and horizontal movement
-        float speed = new Vector3(moveForward, 0, moveHorizontal).magnitude;
-        animator.SetFloat("Speed", speed); // Assuming "Speed" is a parameter in your animator
 
         // Make the pigeon poop when ctrl key is pressed
         if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
@@ -80,7 +83,6 @@ public class PlayerController : MonoBehaviour
 
     void Poop()
     {
-        // Instantiate poop at the spawn point
         if (poopPrefab != null && poopSpawnPoint != null)
         {
             GameObject poop = Instantiate(poopPrefab, poopSpawnPoint.position, poopSpawnPoint.rotation);
