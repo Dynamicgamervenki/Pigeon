@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
     CameraManager cameraManager;
     Animator animator;
     CharacterController characterController; // Reference to CharacterController component
+    HealthSystem healthSystem;
 
     public float moveSpeed = 5f;
     public float rotationSpeed = 100f;
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         cameraManager = FindObjectOfType<CameraManager>(); // Assuming CameraManager is a script in your scene
+        healthSystem = FindObjectOfType<HealthSystem>();
         animator = GetComponent<Animator>(); // Assuming Animator is attached to the same GameObject as this script
         characterController = GetComponent<CharacterController>(); // Get the CharacterController component
         initialRotation = transform.rotation; // Store initial rotation of the bird
@@ -102,6 +104,10 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "CurrentPole")
-            gameObject.SetActive(false);
+        {
+           healthSystem.slider.value -= healthSystem.decreaseRate * Time.deltaTime;
+            // gameObject.SetActive(false);
+        }
+            
     }
 }

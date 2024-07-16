@@ -23,12 +23,14 @@ public class EnemieAi : MonoBehaviour
 
     public GameObject rightHand;
     private GameObject Ak47;
+    private ParticleSystem shootingVfx;
 
     private void Awake()
     {
         pigeon = GameObject.Find("Player");
         anim = GetComponent<Animator>();
         Ak47 = this.gameObject.transform.GetChild(9).gameObject;
+        shootingVfx = Ak47.transform.GetChild(0).GetComponent<ParticleSystem>();  
     }
 
     private void Update()
@@ -62,7 +64,8 @@ public class EnemieAi : MonoBehaviour
     {
         anim.SetBool("isShooting", true);
         AttachGun();
-        GameObject instantiatedBullet =  Instantiate(bulletPrefab, shootPoint.position, Quaternion.identity);
+        shootingVfx.Play();
+        GameObject instantiatedBullet =  Instantiate(bulletPrefab, shootPoint.position,Quaternion.identity);
         Vector3 directionToPlayer = (pigeon.transform.position - shootPoint.position).normalized;
         Rigidbody bulletRigidbody = instantiatedBullet.GetComponent<Rigidbody>();
         if (bulletRigidbody != null)

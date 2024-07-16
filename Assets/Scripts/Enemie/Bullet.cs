@@ -6,11 +6,13 @@ public class Bullet : MonoBehaviour
 {
     private GameObject mainCam;
     PlayerController playerController;
+    public HealthSystem healthSystem;
 
     private void Awake()
     {
         mainCam = GameObject.Find("Main Camera");
         playerController = FindObjectOfType<PlayerController>();
+        healthSystem = FindObjectOfType<HealthSystem>();
         StartCoroutine(TurnOffBullets());
     }
 
@@ -19,9 +21,8 @@ public class Bullet : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             playerController.blood.Play();
-            mainCam.transform.SetParent(null);
-            collision.gameObject.SetActive(false);
             this.gameObject.SetActive(false);
+            healthSystem.DecrementHealth(33.3f);
             Debug.Log("GAME OVER");
         }
 

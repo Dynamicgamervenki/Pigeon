@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - Poop
   - CurrentPole
+  - FxTemporaire
+  - Building
   layers:
   - Default
   - TransparentFX

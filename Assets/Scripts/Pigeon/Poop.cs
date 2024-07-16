@@ -11,15 +11,18 @@ public class Poop : MonoBehaviour
         poopVfx = this.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>();
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
+        // Check if the collided object is tagged as "Player"
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            return; // Do nothing if it collides with the player
+        }
 
-        if (collision.gameObject.tag == "Enemie")
-        {      
+        if (collision.gameObject.CompareTag("Enemie"))
+        {
             StartCoroutine(PoopFalse(collision.gameObject));
         }
-            
         else
         {
             StartCoroutine(PoopFalse(this.gameObject));
@@ -31,8 +34,5 @@ public class Poop : MonoBehaviour
         poopVfx.Play();
         yield return new WaitForSeconds(0.10f);
         gg.SetActive(false);
-
     }
-
-
 }
