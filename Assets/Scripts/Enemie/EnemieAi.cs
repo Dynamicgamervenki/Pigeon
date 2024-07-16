@@ -37,8 +37,11 @@ public class EnemieAi : MonoBehaviour
        if(PigeonWithinRadius)
             LookAndRotateTowardsPigeon();
 
-       if(!PigeonWithinRadius)
+       if(!PigeonWithinRadius && pigeon.gameObject.activeInHierarchy)
             anim.SetBool("isShooting", false);
+
+        if (!pigeon.gameObject.activeInHierarchy)
+            anim.SetBool("dance", true);
 
     }
 

@@ -4,13 +4,34 @@ using UnityEngine;
 
 public class Poop : MonoBehaviour
 {
+    private ParticleSystem poopVfx;
+
+    private void Awake()
+    {
+        poopVfx = this.gameObject.transform.GetChild(0).GetComponent<ParticleSystem>();
+    }
+
+
     private void OnCollisionEnter(Collision collision)
     {
 
         if (collision.gameObject.tag == "Enemie")
-            collision.gameObject.SetActive(false);
+        {      
+            StartCoroutine(PoopFalse(collision.gameObject));
+        }
+            
         else
-            gameObject.SetActive(false);
+        {
+            StartCoroutine(PoopFalse(this.gameObject));
+        }
+    }
+
+    IEnumerator PoopFalse(GameObject gg)
+    {
+        poopVfx.Play();
+        yield return new WaitForSeconds(0.10f);
+        gg.SetActive(false);
+
     }
 
 

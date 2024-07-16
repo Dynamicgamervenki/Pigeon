@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private Quaternion initialRotation; // Store initial rotation for resetting tilt
     private Quaternion targetRotation; // Target rotation for tilting
 
+    public ParticleSystem blood;
+
     private void Awake()
     {
         cameraManager = FindObjectOfType<CameraManager>(); // Assuming CameraManager is a script in your scene
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour
         characterController = GetComponent<CharacterController>(); // Get the CharacterController component
         initialRotation = transform.rotation; // Store initial rotation of the bird
         targetRotation = initialRotation; // Initialize target rotation to initial rotation
+        blood = this.transform.GetChild(2).gameObject.GetComponent<ParticleSystem>();
     }
 
     void Update()
@@ -98,7 +101,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "CurrentPole")
+        if (collision.gameObject.tag == "CurrentPole")
             gameObject.SetActive(false);
     }
 }
