@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private Quaternion initialRotation; // Store initial rotation for resetting tilt
     private Quaternion targetRotation; // Target rotation for tilting
 
+    public float healthDamage;
+
     public ParticleSystem blood;
 
     private void Awake()

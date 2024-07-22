@@ -9,6 +9,8 @@ public class Vehicle : MonoBehaviour
     public List<Transform> pathTransformPoints = new List<Transform>();
     private int currentTargetIndex = 0;
 
+    public bool loop = false;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -27,14 +29,21 @@ public class Vehicle : MonoBehaviour
                 {
                     // Move to the next target in the list
                     currentTargetIndex++;
+
+                    // Check if we should loop back to the beginning
+                    if (currentTargetIndex >= pathTransformPoints.Count)
+                    {
+                        if (loop)
+                        {
+                            currentTargetIndex = 0; // Loop back to the beginning
+                        }
+                        else
+                        {
+                            agent.isStopped = true; // Stop the agent if loop is false
+                        }
+                    }
                 }
-            }
-            else
-            {
-                // Stop the agent when the last waypoint is reached
-                agent.isStopped = true;
             }
         }
     }
 }
-
