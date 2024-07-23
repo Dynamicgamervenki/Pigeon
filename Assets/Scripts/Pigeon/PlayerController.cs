@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour
 {
@@ -21,11 +22,13 @@ public class PlayerController : MonoBehaviour
     private Quaternion tiltTargetRotation; // Target rotation for tilting
 
     public float healthDamage;
+    float originalSpeed;
 
     public ParticleSystem blood;
 
     private void Awake()
     {
+        originalSpeed = moveSpeed;
         cameraManager = FindObjectOfType<CameraManager>(); // Assuming CameraManager is a script in your scene
         cameraController = FindObjectOfType<CameraController>(); // Get the CameraController component
         healthSystem = FindObjectOfType<HealthSystem>();
@@ -90,6 +93,7 @@ public class PlayerController : MonoBehaviour
         {
             Poop();
         }
+
     }
 
     void Poop()
@@ -107,10 +111,27 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "CheckPoint")
+        {
+            other.gameObject.SetActive(false);
+            StartCoroutine(DoubleSpeedForDuration(30.0f));
+        }
+    }
+
+    private System.Collections.IEnumerator DoubleSpeedForDuration(float duration)
+    {
+        moveSpeed *= 2; // Double the speed
+        yield return new WaitForSeconds(duration);
+        moveSpeed = originalSpeed; // Revert back to original speed
+    }
+
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "CurrentPole")
         {
+            Debug.Log("health decreasing");
             healthSystem.slider.value -= healthSystem.decreaseRate * Time.deltaTime;
             // gameObject.SetActive(false);
         }
