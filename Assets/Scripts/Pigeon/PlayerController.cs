@@ -3,12 +3,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     CameraManager cameraManager;
+    CameraController cameraController; // Reference to the CameraController script
     Animator animator;
     CharacterController characterController; // Reference to CharacterController component
     HealthSystem healthSystem;
 
     public float moveSpeed = 5f;
-    public float rotationSpeed = 100f;
+    public float rotationSpeed = 10f;
     public float verticalSpeed = 2f; // Speed for vertical movement when space is pressed
     public GameObject poopPrefab; // Reference to the poop prefab
     public Transform poopSpawnPoint; // Reference to the poop spawn point
@@ -17,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public float tiltAngle = 30f; // Angle for tilting when Q or E key is pressed
     public float tiltSmoothness = 5f; // Speed of tilt interpolation
     private Quaternion initialRotation; // Store initial rotation for resetting tilt
-    private Quaternion targetRotation; // Target rotation for tilting
+    private Quaternion tiltTargetRotation; // Target rotation for tilting
 
     public float healthDamage;
 
@@ -26,11 +27,12 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         cameraManager = FindObjectOfType<CameraManager>(); // Assuming CameraManager is a script in your scene
+        cameraController = FindObjectOfType<CameraController>(); // Get the CameraController component
         healthSystem = FindObjectOfType<HealthSystem>();
         animator = GetComponent<Animator>(); // Assuming Animator is attached to the same GameObject as this script
         characterController = GetComponent<CharacterController>(); // Get the CharacterController component
         initialRotation = transform.rotation; // Store initial rotation of the bird
-        targetRotation = initialRotation; // Initialize target rotation to initial rotation
+        tiltTargetRotation = initialRotation; // Initialize target rotation to initial rotation
         blood = this.transform.GetChild(2).gameObject.GetComponent<ParticleSystem>();
     }
 
@@ -38,47 +40,49 @@ public class PlayerController : MonoBehaviour
     {
         // Get input
         float moveForward = Input.GetAxis("Vertical"); // W/S or Up/Down arrow keys
-        float moveHorizontal = Input.GetAxis("Horizontal"); // A/D or Left/Right arrow keys
 
-        // Move the pigeon using CharacterController
-        Vector3 moveDirection = (transform.forward * moveForward + transform.right * moveHorizontal) * moveSpeed * Time.deltaTime;
-        characterController.Move(moveDirection);
+        // Calculate the camera-relative move direction
+        Vector3 moveDirection = cameraController.PlanarRotation * new Vector3(0, 0, moveForward);
 
+        // If there is input, set the target rotation based on move direction
+        if (moveDirection.magnitude > 0.1f)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+            // Smoothly rotate the player towards the target rotation
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+        }
 
-        // Calculate the speed based on both forward and horizontal movement for animation blendtree
-        float speed = new Vector3(moveForward, 0, moveHorizontal).magnitude;
+        // Move the player
+        characterController.Move(moveDirection * moveSpeed);
+
+        // Calculate the speed based on forward movement for animation blendtree
+        float speed = Mathf.Abs(moveForward);
         animator.SetFloat("Speed", speed);
 
-        // Smoothly tilt the bird to the left when Q key is pressed
+        // Set animation parameter for tilting when Q or E key is pressed
         if (Input.GetKey(KeyCode.Q))
         {
-            targetRotation = Quaternion.Euler(initialRotation.eulerAngles + new Vector3(0, 0, tiltAngle));
+            animator.SetFloat("Speed", 1.5f); // Set blend tree speed for tilting left
         }
-        // Smoothly tilt the bird to the right when E key is pressed
         else if (Input.GetKey(KeyCode.E))
         {
-            targetRotation = Quaternion.Euler(initialRotation.eulerAngles + new Vector3(0, 0, -tiltAngle));
+            animator.SetFloat("Speed", 2.0f); // Set blend tree speed for tilting right
         }
         else
         {
-            targetRotation = initialRotation; // Reset target rotation to initial rotation
+            animator.SetFloat("Speed", speed); // Reset speed parameter to normal
         }
-
-        // Interpolate towards the target rotation for smooth tilting
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, tiltSmoothness * Time.deltaTime);
 
         // Move the pigeon up when space key is pressed
         if (Input.GetKey(KeyCode.Space))
         {
-            characterController.Move(Vector3.up * verticalSpeed * Time.deltaTime);
-            animator.SetFloat("Speed", 1.0f);
+            characterController.Move(Vector3.up * verticalSpeed);
         }
 
         // Move the pigeon down when S key is pressed
         if (Input.GetKey(KeyCode.S))
         {
-            characterController.Move(Vector3.down * verticalSpeed * Time.deltaTime);
-            animator.SetFloat("Speed", 1.0f);
+            characterController.Move(Vector3.down * verticalSpeed);
         }
 
         // Make the pigeon poop when ctrl key is pressed
@@ -107,9 +111,8 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "CurrentPole")
         {
-           healthSystem.slider.value -= healthSystem.decreaseRate * Time.deltaTime;
+            healthSystem.slider.value -= healthSystem.decreaseRate * Time.deltaTime;
             // gameObject.SetActive(false);
         }
-            
     }
 }

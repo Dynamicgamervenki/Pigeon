@@ -4,49 +4,58 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    [Header("Camera Settings")]
-    public Transform followTarget;
-    public float distance;
-    public float minVerticalAngel = -20.0f;
-    public float maxVerticalAngel = 45.0f;
-    public Vector2 frameOffset;
-    public float rotationSpeed = 2.0f;
-    public bool InvertX;
-    public bool InvertY;
+    [SerializeField] Transform followTarget;
 
-    public float invertXvalue;
-    public float invertYvalue;
+    [SerializeField] float rotationSpeed = 2f;
+    [SerializeField] float distance = 5;
 
-    [Header("Camera Inputs")]
-    public float rotationX;
-    public float rotationY;
+    [SerializeField] float minVerticalAngle = -45;
+    [SerializeField] float maxVerticalAngle = 45;
 
-    private void Awake()
+    [SerializeField] Vector2 framingOffset;
+
+    [SerializeField] bool invertX;
+    [SerializeField] bool invertY;
+
+    UiManager uiManager;
+
+
+    float rotationX;
+    float rotationY;
+
+    float invertXVal;
+    float invertYVal;
+
+    public bool controlsEnabled;
+
+    private void Start()
     {
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
+        uiManager = FindObjectOfType<UiManager>();
     }
 
     private void Update()
     {
-        invertXvalue = (InvertX) ? -1 : 1;
-        invertYvalue = (InvertY) ? -1 : 1;
 
-        rotationX += Input.GetAxis("Camera Y") * invertYvalue * rotationSpeed;
-        rotationX = Mathf.Clamp(rotationX, minVerticalAngel, maxVerticalAngel);
+        if (uiManager.isPaused)
+            return;
 
-        rotationY += Input.GetAxis("Camera X") * invertXvalue * rotationSpeed;
+        invertXVal = (invertX) ? -1 : 1;
+        invertYVal = (invertY) ? -1 : 1;
 
-        var targetRotation = Quaternion.Euler(rotationX, rotationY, 0f);
-        var focousPosition = followTarget.position + new Vector3(frameOffset.x, frameOffset.y);
+        rotationX += Input.GetAxis("Camera Y") * invertYVal * rotationSpeed;
+        rotationX = Mathf.Clamp(rotationX, minVerticalAngle, maxVerticalAngle);
 
-        transform.position = focousPosition - targetRotation * new Vector3(0, 0, distance);
+        rotationY += Input.GetAxis("Camera X") * invertXVal * rotationSpeed;
+
+        var targetRotation = Quaternion.Euler(rotationX, rotationY, 0);
+
+        var focusPostion = followTarget.position + new Vector3(framingOffset.x, framingOffset.y);
+
+        transform.position = focusPostion - targetRotation * new Vector3(0, 0, distance);
         transform.rotation = targetRotation;
-
     }
 
-    public Quaternion PlanerRotation => Quaternion.Euler(0f, rotationY, 0f);                                                //c# properties concept.
-
-
-
+    public Quaternion PlanarRotation => Quaternion.Euler(0, rotationY, 0);
 }
