@@ -116,7 +116,7 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "CheckPoint")
         {
             other.gameObject.SetActive(false);
-            StartCoroutine(DoubleSpeedForDuration(30.0f));
+            StartCoroutine(DoubleSpeedForDuration(10.0f));
         }
     }
 
