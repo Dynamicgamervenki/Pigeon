@@ -31,7 +31,7 @@ public class CameraController : MonoBehaviour
     private void Start()
     {
         Cursor.visible = false;
-        //Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Locked;
         uiManager = FindObjectOfType<UiManager>();
     }
 

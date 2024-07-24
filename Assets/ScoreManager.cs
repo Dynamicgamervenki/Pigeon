@@ -34,8 +34,9 @@ public class ScoreManager : MonoBehaviour
 
         if (score == enemyCount)
         {
-            // Load the gameWon scene
             UiManager.instance.GameWon();
+            AudioManager.Instance.StopMusic("Theme");
+            AudioManager.Instance.PlaySFX("GameWon", 0.2f);
         }
     }
 

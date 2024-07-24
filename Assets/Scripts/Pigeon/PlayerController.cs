@@ -39,6 +39,11 @@ public class PlayerController : MonoBehaviour
         blood = this.transform.GetChild(2).gameObject.GetComponent<ParticleSystem>();
     }
 
+    private void Start()
+    {
+        AudioManager.Instance.PlayMusic("Theme");
+    }
+
     void Update()
     {
         // Get input
@@ -47,6 +52,8 @@ public class PlayerController : MonoBehaviour
         // Calculate the camera-relative move direction
         Vector3 moveDirection = cameraController.PlanarRotation * new Vector3(0, 0, moveForward);
 
+        bool isNotMoving = moveForward == 0f;
+
         // If there is input, set the target rotation based on move direction
         if (moveDirection.magnitude > 0.1f)
         {
@@ -54,6 +61,8 @@ public class PlayerController : MonoBehaviour
             // Smoothly rotate the player towards the target rotation
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
+
+        //how to check if player is not pressing any button or moving
 
         // Move the player
         characterController.Move(moveDirection * moveSpeed);
@@ -80,6 +89,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             characterController.Move(Vector3.up * verticalSpeed);
+            animator.SetFloat("Speed", 0.5f);
         }
 
         // Move the pigeon down when S key is pressed
@@ -93,6 +103,7 @@ public class PlayerController : MonoBehaviour
         {
             Poop();
         }
+
 
     }
 

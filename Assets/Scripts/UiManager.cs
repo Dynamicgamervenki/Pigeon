@@ -38,7 +38,9 @@ public class UiManager : MonoBehaviour
 
     public void StartGame()
     {
+   
         Time.timeScale = 1;
+        AudioManager.Instance.PlaySFX("GameStart", 1.0f);
         SceneManager.LoadScene(2);
     }
 
@@ -62,6 +64,8 @@ public class UiManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 SceneManager.LoadScene(0);
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
             }
         }
 
@@ -78,12 +82,13 @@ public class UiManager : MonoBehaviour
             int id = SceneManager.GetActiveScene().buildIndex;
             int loadId = 0;
             if (id == 1)
-                 loadId = 2;
+                 loadId = 0;
             else if (id == 2)
                 loadId = 1;
             if (Input.GetKeyDown(KeyCode.N))
             {
                 SceneManager.LoadScene(loadId);
+                AudioManager.Instance.PlayMusic("Theme");
             }
         }
 
@@ -111,6 +116,8 @@ public class UiManager : MonoBehaviour
 
     public void GameLost()
     {
+        AudioManager.Instance.StopMusic("Theme");
+        AudioManager.Instance.PlaySFX("GameLost",0.1f);
         game_Lost = true;
         gameLost.gameObject.SetActive(true);
     }
