@@ -71,6 +71,7 @@ public class EnemieAi : MonoBehaviour
         if (bulletRigidbody != null)
         {
             bulletRigidbody.velocity = directionToPlayer * bulletSpeed;
+            AudioManager.Instance.PlaySFX("Shooting", 0.75f);
         }
 
     }

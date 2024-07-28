@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
         {
             playerController.blood.Play();
             this.gameObject.SetActive(false);
-            healthSystem.DecrementHealth(33.3f);
+            healthSystem.DecrementHealth(playerController.healthDamage);
             Debug.Log("GAME OVER");
         }
 

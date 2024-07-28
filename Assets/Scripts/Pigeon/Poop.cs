@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Poop : MonoBehaviour
 {
     private ParticleSystem poopVfx;
+
+    public Text score;
 
     private void Awake()
     {
@@ -21,12 +24,14 @@ public class Poop : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Enemie"))
         {
+            ScoreManager.instance.IncreaseScore(1);
             StartCoroutine(PoopFalse(collision.gameObject));
         }
         else
         {
             StartCoroutine(PoopFalse(this.gameObject));
         }
+
     }
 
     IEnumerator PoopFalse(GameObject gg)

@@ -14,11 +14,15 @@ public class HealthSystem : MonoBehaviour
 
     public float decreaseRate = 1f;
 
+    UiManager uiManager;
+
+
     private void Awake()
     {
         slider = GetComponent<Slider>();
         mainCam = GameObject.Find("Main Camera");
         playerController = FindObjectOfType<PlayerController>();
+        uiManager = FindObjectOfType<UiManager>();
         InitalHealth();
     }
 
@@ -52,12 +56,13 @@ public class HealthSystem : MonoBehaviour
             Vector3 move = new Vector3(0, fallSpeed, 0);
             mainCam.transform.SetParent(null);
             playerController.GetComponent<CharacterController>().Move(move * Time.deltaTime);
-            Invoke("DelayMin", 0.5f);
+            Invoke("DelayMin", 0.8f);
         }
     }
 
     private void DelayMin()
     {
         playerController.gameObject.SetActive(false);
+        uiManager.GameLost();
     }
 }

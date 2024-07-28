@@ -10,6 +10,7 @@ TagManager:
   - CurrentPole
   - FxTemporaire
   - Building
+  - CheckPoint
   layers:
   - Default
   - TransparentFX
