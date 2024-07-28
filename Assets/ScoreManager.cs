@@ -30,15 +30,33 @@ public class ScoreManager : MonoBehaviour
 
     private void Update()
     {
-        int enemyCount = GameObject.FindGameObjectsWithTag("Enemie").Length;
+        // Get all GameObjects with the "Enemie" tag
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemie");
 
-        if (score == enemyCount)
+        // Assume that all enemies are inactive initially
+        bool allEnemiesInactive = true;
+
+        // Check if any enemy is still active
+        foreach (GameObject enemy in enemies)
+        {
+            if (enemy.activeSelf)
+            {
+                allEnemiesInactive = false;
+                break;
+            }
+        }
+
+        // If all enemies are inactive, the player wins
+        if (allEnemiesInactive)
         {
             UiManager.instance.GameWon();
             AudioManager.Instance.StopMusic("Theme");
             AudioManager.Instance.PlaySFX("GameWon", 0.2f);
         }
     }
+
+
+
 
     public void IncreaseScore(int amount)
     {

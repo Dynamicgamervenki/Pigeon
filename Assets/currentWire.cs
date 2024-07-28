@@ -1,21 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class currentWire : MonoBehaviour
+public class CurrentWire : MonoBehaviour
 {
-    public GameObject pigeon;
+    public static CurrentWire instance;
+
+    HealthSystem healthSystem;
+   public  bool inContactWithCurrentPole = false;
 
     private void Awake()
     {
-        pigeon = pigeon = GameObject.Find("Player");
+        healthSystem = FindObjectOfType<HealthSystem>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerStay(Collider other)
     {
-        if(collision.gameObject.tag == "Player")
+        if(other.tag == "Player")
         {
-            Debug.Log("current");
+            Debug.Log("LMAO");
+            healthSystem.DecrementHealth(5);
+             
         }
     }
+
 }

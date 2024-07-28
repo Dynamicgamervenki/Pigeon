@@ -127,7 +127,8 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "CheckPoint")
         {
             other.gameObject.SetActive(false);
-            StartCoroutine(DoubleSpeedForDuration(10.0f));
+            StartCoroutine(DoubleSpeedForDuration(5.0f));
+            ScoreManager.instance.IncreaseScore(2);
         }
     }
 
@@ -138,13 +139,4 @@ public class PlayerController : MonoBehaviour
         moveSpeed = originalSpeed; // Revert back to original speed
     }
 
-    private void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.tag == "CurrentPole")
-        {
-            Debug.Log("health decreasing");
-            healthSystem.slider.value -= healthSystem.decreaseRate * Time.deltaTime;
-            // gameObject.SetActive(false);
-        }
-    }
 }

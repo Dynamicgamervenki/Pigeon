@@ -31,6 +31,7 @@ public class Poop : MonoBehaviour
         {
             StartCoroutine(PoopFalse(this.gameObject));
         }
+
     }
 
     IEnumerator PoopFalse(GameObject gg)

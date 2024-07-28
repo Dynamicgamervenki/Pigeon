@@ -39710,6 +39710,7 @@ GameObject:
   - component: {fileID: 913172541183991590}
   - component: {fileID: 1067195388730290290}
   - component: {fileID: 1115476827071971041}
+  - component: {fileID: 1115476827071971042}
   m_Layer: 0
   m_Name: LongWire
   m_TagString: CurrentPole
@@ -44498,6 +44499,7 @@ GameObject:
   - component: {fileID: 5744472369935158770}
   - component: {fileID: 5139517645699067116}
   - component: {fileID: 5744472369935158771}
+  - component: {fileID: 5744472369935158772}
   m_Layer: 0
   m_Name: wire2
   m_TagString: CurrentPole
@@ -46483,7 +46485,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -46491,6 +46493,18 @@ CapsuleCollider:
   m_Height: 23.5
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -11.8}
+--- !u!114 &1115476827071971042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4409800295562473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1118900236415656956
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50476,6 +50490,7 @@ GameObject:
   - component: {fileID: 2983553226864289326}
   - component: {fileID: 7123523496358216404}
   - component: {fileID: 7123523496358216405}
+  - component: {fileID: 7123523496358216406}
   m_Layer: 0
   m_Name: MediumWire (1)
   m_TagString: CurrentPole
@@ -51411,6 +51426,7 @@ GameObject:
   - component: {fileID: 8049077703529349520}
   - component: {fileID: 7767694086761310273}
   - component: {fileID: 8049077703529349521}
+  - component: {fileID: 8049077703529349522}
   m_Layer: 0
   m_Name: LongWire (2)
   m_TagString: CurrentPole
@@ -52230,6 +52246,7 @@ GameObject:
   - component: {fileID: 2603690213681481079}
   - component: {fileID: 8042946587133387149}
   - component: {fileID: 8042946587133387150}
+  - component: {fileID: 8042946587133387151}
   m_Layer: 0
   m_Name: MediumWire (2)
   m_TagString: CurrentPole
@@ -54121,6 +54138,7 @@ GameObject:
   - component: {fileID: 6502348715240588245}
   - component: {fileID: 5969433939953361611}
   - component: {fileID: 6502348715240588246}
+  - component: {fileID: 6502348715240588247}
   m_Layer: 0
   m_Name: wire4
   m_TagString: CurrentPole
@@ -55111,6 +55129,7 @@ GameObject:
   - component: {fileID: 7214740195855879191}
   - component: {fileID: 7851090013663948041}
   - component: {fileID: 7851090013663948042}
+  - component: {fileID: 7851090013663948043}
   m_Layer: 0
   m_Name: wire1
   m_TagString: CurrentPole
@@ -65240,6 +65259,7 @@ GameObject:
   - component: {fileID: 7629480379805738881}
   - component: {fileID: 6992419811075851935}
   - component: {fileID: 7629480379805738882}
+  - component: {fileID: 7629480379805738883}
   m_Layer: 0
   m_Name: wire3
   m_TagString: CurrentPole
@@ -65559,6 +65579,7 @@ GameObject:
   - component: {fileID: 1010540374406221093}
   - component: {fileID: 4770023777010175746}
   - component: {fileID: 6651820357515171429}
+  - component: {fileID: 6651820357515171430}
   m_Layer: 0
   m_Name: LongWire (1)
   m_TagString: CurrentPole
@@ -71830,6 +71851,7 @@ GameObject:
   - component: {fileID: 2761383138150814892}
   - component: {fileID: 2758913104619622069}
   - component: {fileID: 4431933384132082763}
+  - component: {fileID: 4431933384132082764}
   m_Layer: 0
   m_Name: wire4
   m_TagString: CurrentPole
@@ -71852,7 +71874,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -71860,6 +71882,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &4431933384132082764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4431933384132082762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4433739520998770947
 Transform:
   m_ObjectHideFlags: 0
@@ -72485,6 +72519,7 @@ GameObject:
   - component: {fileID: 8796026957291660108}
   - component: {fileID: 8285084912048374354}
   - component: {fileID: 8796026957291660109}
+  - component: {fileID: 8796026957291660110}
   m_Layer: 0
   m_Name: wire1
   m_TagString: CurrentPole
@@ -74467,6 +74502,7 @@ GameObject:
   - component: {fileID: 534920004275094242}
   - component: {fileID: 1118900236415656956}
   - component: {fileID: 6947453975700149013}
+  - component: {fileID: 6947453975700149014}
   m_Layer: 0
   m_Name: wire5
   m_TagString: CurrentPole
@@ -75513,6 +75549,7 @@ GameObject:
   - component: {fileID: 7419009125334303947}
   - component: {fileID: 5889726610238164505}
   - component: {fileID: 7419009125334303948}
+  - component: {fileID: 7419009125334303949}
   m_Layer: 0
   m_Name: MediumWire (1)
   m_TagString: CurrentPole
@@ -76209,6 +76246,7 @@ GameObject:
   - component: {fileID: 8553658156606891877}
   - component: {fileID: 4397995919082963871}
   - component: {fileID: 8553658156606891878}
+  - component: {fileID: 8553658156606891879}
   m_Layer: 0
   m_Name: MediumWire
   m_TagString: CurrentPole
@@ -82237,6 +82275,7 @@ GameObject:
   - component: {fileID: 1149956357610586542}
   - component: {fileID: 512913413532442800}
   - component: {fileID: 7562473183375134809}
+  - component: {fileID: 7562473183375134810}
   m_Layer: 0
   m_Name: wire4
   m_TagString: CurrentPole
@@ -82355,6 +82394,7 @@ GameObject:
   - component: {fileID: 8258289044846002689}
   - component: {fileID: 4118318775821412091}
   - component: {fileID: 8258289044846002690}
+  - component: {fileID: 8258289044846002691}
   m_Layer: 0
   m_Name: MediumWire
   m_TagString: CurrentPole
@@ -84038,7 +84078,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -84046,6 +84086,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &5744472369935158772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 862886473198994619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5745224252289737017
 GameObject:
   m_ObjectHideFlags: 0
@@ -86244,6 +86296,7 @@ GameObject:
   - component: {fileID: 4580733710282260553}
   - component: {fileID: 6219768639067813665}
   - component: {fileID: 6219768639067813666}
+  - component: {fileID: 6219768639067813667}
   m_Layer: 0
   m_Name: wire3
   m_TagString: CurrentPole
@@ -87125,7 +87178,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -87133,6 +87186,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &6219768639067813667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083653959233697177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6222137347735399792
 Transform:
   m_ObjectHideFlags: 0
@@ -88631,7 +88696,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -88639,6 +88704,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &6502348715240588247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2196941016973314716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6503329158173941230
 GameObject:
   m_ObjectHideFlags: 0
@@ -88667,6 +88744,7 @@ GameObject:
   - component: {fileID: 4396478296035350773}
   - component: {fileID: 3711331211409770306}
   - component: {fileID: 7860241878228375686}
+  - component: {fileID: 7860241878228375687}
   m_Layer: 0
   m_Name: wire1
   m_TagString: CurrentPole
@@ -88895,6 +88973,7 @@ GameObject:
   - component: {fileID: 2224255665708349778}
   - component: {fileID: 1600307840571185228}
   - component: {fileID: 8779801293219227813}
+  - component: {fileID: 8779801293219227814}
   m_Layer: 0
   m_Name: wire6
   m_TagString: CurrentPole
@@ -89433,7 +89512,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -89441,6 +89520,18 @@ CapsuleCollider:
   m_Height: 23.5
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -11.8}
+--- !u!114 &6651820357515171430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3357395961826534745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6666049100635709112
 Transform:
   m_ObjectHideFlags: 0
@@ -91300,7 +91391,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -91308,6 +91399,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &6947453975700149014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4840678467422735275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &6948674389972873695
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -92385,7 +92488,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -92393,6 +92496,18 @@ CapsuleCollider:
   m_Height: 35.5
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -17.3}
+--- !u!114 &7123523496358216406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726254395430859405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7125064853311879283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94148,7 +94263,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -94156,6 +94271,18 @@ CapsuleCollider:
   m_Height: 35.5
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -17.3}
+--- !u!114 &7419009125334303949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5062201448863983107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7425225451972762149
 GameObject:
   m_ObjectHideFlags: 0
@@ -94713,6 +94840,7 @@ GameObject:
   - component: {fileID: 3201891704960483701}
   - component: {fileID: 2631277235235332203}
   - component: {fileID: 7507085003159537725}
+  - component: {fileID: 7507085003159537726}
   m_Layer: 0
   m_Name: wire
   m_TagString: CurrentPole
@@ -94735,7 +94863,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -94743,6 +94871,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &7507085003159537726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7507085003159537724}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &7516140597253301540
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -95117,7 +95257,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -95125,6 +95265,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &7562473183375134810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5455150753961789671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7564269600636704577
 Transform:
   m_ObjectHideFlags: 0
@@ -95450,7 +95602,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -95458,6 +95610,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &7629480379805738883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3287832753607683784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7629731800512305795
 GameObject:
   m_ObjectHideFlags: 0
@@ -95845,6 +96009,7 @@ GameObject:
   - component: {fileID: 6098199584731927394}
   - component: {fileID: 3197865053657141055}
   - component: {fileID: 7717586842541893292}
+  - component: {fileID: 7717586842541893293}
   m_Layer: 0
   m_Name: wire2
   m_TagString: CurrentPole
@@ -95867,7 +96032,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -95875,6 +96040,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &7717586842541893293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7717586842541893291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &7718301925393878743
 Transform:
   m_ObjectHideFlags: 0
@@ -96513,7 +96690,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -96521,6 +96698,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &7851090013663948043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2332308770366211422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7852166854707638337
 GameObject:
   m_ObjectHideFlags: 0
@@ -96589,7 +96778,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -96597,6 +96786,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &7860241878228375687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6504375918214990286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7861685340199391079
 GameObject:
   m_ObjectHideFlags: 0
@@ -97831,7 +98032,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -97839,6 +98040,18 @@ CapsuleCollider:
   m_Height: 35.5
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -17.3}
+--- !u!114 &8042946587133387151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923455506052993492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8044740221095790258
 Transform:
   m_ObjectHideFlags: 0
@@ -97971,7 +98184,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -97979,6 +98192,18 @@ CapsuleCollider:
   m_Height: 23.5
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -11.8}
+--- !u!114 &8049077703529349522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1860655963921363407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8051139370906962084
 GameObject:
   m_ObjectHideFlags: 0
@@ -99421,7 +99646,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -99429,6 +99654,18 @@ CapsuleCollider:
   m_Height: 35.5
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -17.3}
+--- !u!114 &8258289044846002691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5478629780366579362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &8261336414982987047
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -99630,6 +99867,7 @@ GameObject:
   - component: {fileID: 5598233013804927247}
   - component: {fileID: 435873319361113589}
   - component: {fileID: 8296683434472807853}
+  - component: {fileID: 8296683434472807854}
   m_Layer: 0
   m_Name: MediumWire (1)
   m_TagString: CurrentPole
@@ -99652,7 +99890,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -99660,6 +99898,18 @@ CapsuleCollider:
   m_Height: 35.5
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -17.3}
+--- !u!114 &8296683434472807854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8296683434472807852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &8296798600269554937
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -101287,7 +101537,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -101295,6 +101545,18 @@ CapsuleCollider:
   m_Height: 35.5
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -17.3}
+--- !u!114 &8553658156606891879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199375146187928518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &8554255005974757737
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -101976,6 +102238,7 @@ GameObject:
   - component: {fileID: 3718443859052789276}
   - component: {fileID: 4283446354470264578}
   - component: {fileID: 8636621499423192918}
+  - component: {fileID: 8636621499423192919}
   m_Layer: 0
   m_Name: wire3
   m_TagString: CurrentPole
@@ -101998,7 +102261,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -102006,6 +102269,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &8636621499423192919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8636621499423192917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8638308931884013086
 Transform:
   m_ObjectHideFlags: 0
@@ -103005,7 +103280,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -103013,6 +103288,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &8779801293219227814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6530154854264746011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8782098873083988964
 Transform:
   m_ObjectHideFlags: 0
@@ -103083,7 +103370,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -103091,6 +103378,18 @@ CapsuleCollider:
   m_Height: 5.41
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -2.6144164}
+--- !u!114 &8796026957291660110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4490126666020760069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &8796804699724482415
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -105465,6 +105764,7 @@ GameObject:
   - component: {fileID: 5217530463083100992}
   - component: {fileID: 2611517355371904931}
   - component: {fileID: 9190835156661445709}
+  - component: {fileID: 9190835156661445710}
   m_Layer: 0
   m_Name: MediumWire
   m_TagString: CurrentPole
@@ -105487,7 +105787,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -105495,6 +105795,18 @@ CapsuleCollider:
   m_Height: 35.5
   m_Direction: 2
   m_Center: {x: 0.00065932376, y: -0.18873714, z: -17.3}
+--- !u!114 &9190835156661445710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9190835156661445708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8d4f9f3f38431245b942767f5556022, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &9196272265954291549
 Transform:
   m_ObjectHideFlags: 0

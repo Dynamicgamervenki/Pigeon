@@ -16,6 +16,7 @@ public class HealthSystem : MonoBehaviour
 
     UiManager uiManager;
 
+
     private void Awake()
     {
         slider = GetComponent<Slider>();
